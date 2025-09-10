@@ -1,0 +1,55 @@
+body{
+    height: 100vh;
+    width:auto;
+    background-image:url('home.avif');
+    background-repeat: no-repeat;
+    background-position :center;
+    background-size:cover;
+   
+}
+div{
+    justify-content: center;
+    
+    height: 500px;
+    width: 400px;
+    padding:20%;
+    flex-wrap: wrap;
+}
+.container{
+    justify-content: center;
+    margin-left:50px;
+    padding-top:20px;
+    padding-left: 20px;
+}
+input{
+    margin: 30px;
+    height: 30px;
+    width:300px;
+    border-radius: 10px;
+    
+    box-shadow: 5px 5px 5px black;
+    cursor:text;
+
+}
+button{
+    margin-left: 150px;
+    height:30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: purple;
+    color:white;
+    box-shadow: 5px 5px 5px black;
+    cursor:pointer;
+}
+button:hover{
+    background-color: white;
+    color:purple;
+    box-shadow: 5px 5px 5px purple;
+    
+}
+@media(max-width:600px)
+{
+   div{
+    justify-content: left;
+   }
+}
