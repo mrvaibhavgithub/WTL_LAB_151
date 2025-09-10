@@ -1,1 +1,101 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4f4;
+        }
+        header, footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background:red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: blue;
+        }
+        #output div {
+            background: white;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+        }
+        h3 {
+            margin: 0 0 10px 0;
+            color: black;
+        }
+        p {
+            margin: 0;
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>JOKE GENERATOR</h1>
+    </header>
+
+    <main>
+        <button id="fetchBtn">Get a Joke</button>
+        <div id="output"></div>
+    </main>
+
+    <footer>
+        <p> fetch data from public API</p>
+    </footer>
+
+    <script>
+        const button = document.getElementById("fetchBtn");
+        const output = document.getElementById("output");
+
+        button.addEventListener("click", async ()=>{
+
+            let a=await fetch("https://official-joke-api.appspot.com/random_ten")
+            let data=await a.json();
+                   
+                    
+                   
+                    data.forEach(joke => {
+                        const setup = document.createElement("h3");
+                        setup.textContent = joke.setup;
+
+                        const punchline = document.createElement("p");
+                        punchline.textContent = joke.punchline;
+
+                        const container = document.createElement("div");
+                        container.appendChild(setup);
+                        container.appendChild(punchline);
+
+                        output.appendChild(container);
+                    });
+            
+        });
+       
+
+       
+    </script>
+
+</body>
+</html>
