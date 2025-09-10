@@ -1,0 +1,31 @@
+body {
+  font-family:sans-serif;
+  background-color:white;
+  color: black;
+
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+  margin-left: 10px;
+}
+
+.services-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.services-section {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+footer {
+  background-color:black;
+  color:white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+}
