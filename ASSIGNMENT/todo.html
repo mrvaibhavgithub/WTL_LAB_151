@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <div class="completed_box">
+    <h2>Completed task</h2>
+    <ul class="completed_list"></ul>
+  </div>
+
+  <div class="container">
+    <div class="input-area">
+      <input type="text" class="input_item" placeholder="Enter task" />
+      <button class="btn">ADD</button>
+    </div>
+    <ul class="list"></ul>
+  </div>
+
+  <script>
+    let taskBeingEdited = null;
+
+    document.querySelector(".btn").addEventListener("click", function () {
+      const input = document.querySelector(".input_item");
+      const task = input.value.trim();
+
+      if (task === "") {
+        alert("Please enter a valid task");
+        return;
+      }
+
+      if (taskBeingEdited) {
+        taskBeingEdited.querySelector("span.text").textContent = task;
+        alert("Task updated: " + task);
+        taskBeingEdited = null;
+      } else {
+        const li = document.createElement("li");
+        const textSpan = document.createElement("span");
+        textSpan.classList.add("text");
+        textSpan.textContent = task;
+
+        const del = document.createElement("span");
+        del.textContent = "✖";
+        del.classList = "d";
+        del.addEventListener("click", function () {
+          this.parentElement.remove();
+          alert("Task deleted");
+        });
+
+        const done = document.createElement("span");
+        done.textContent = "✔";
+        done.classList = "c";
+        done.addEventListener("click", function () {
+          this.parentElement.style.textDecoration = "line-through";
+          let x = document.createElement("li");
+          x.textContent = textSpan.textContent;
+          document.querySelector(".completed_list").appendChild(x);
+          alert("task " + textSpan.textContent + " completed");
+        });
+
+        textSpan.addEventListener("dblclick", function () {
+          document.querySelector(".input_item").value = this.textContent;
+          taskBeingEdited = this.parentElement;
+        });
+
+        li.appendChild(textSpan);
+        li.appendChild(del);
+        li.appendChild(done);
+        document.querySelector(".list").appendChild(li);
+        alert("Task: " + task + " added");
+      }
+
+      input.value = "";
+    });
+  </script>
+</body>
+</html>
